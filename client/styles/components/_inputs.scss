@@ -1,0 +1,13 @@
+.radio label,
+.checkbox label {
+  font-weight: 100;
+  font-size: 18px;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  border-radius: 0;
+  border: none;
+}
+

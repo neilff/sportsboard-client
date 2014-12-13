@@ -1,0 +1,95 @@
+$dropdown-count: 5;
+
+.dropdown {
+  perspective: 800px;
+  position: relative;
+  width: 175px;
+  display: block;
+
+  .dropdown__title {
+    z-index: 1004;
+    transform-origin: 50%;
+    transition: all 200ms;
+    background: $blue;
+    color: $white;
+    cursor: pointer;
+    user-select: none;
+    padding: 1rem;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top: 15%;
+      height: 70%;
+      line-height: 24px;
+      content: '\f35f';
+      right: 0;
+      width: 50px;
+    }
+
+    &:active {
+      transform: rotateX(25deg);
+    }
+  }
+
+  .dropdown__list {
+    list-style-type: none;
+    position: absolute;
+    overflow: hidden;
+    top: 44px;
+    left: 0;
+    right: 0;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+
+    li {
+      padding: $DP;
+      margin: 3px 0;
+      transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+      color: $white;
+      background: $almost-black;
+      position: relative;
+      border-left: 8px solid $blue;
+    }
+  }
+
+  &.dropdown--open {
+    .dropdown__list li {
+      visibility: visible;
+      right: 0;
+    }
+
+    .dropdown__list {
+      opacity: 1;
+
+      $i: 1;
+      $z: 25;
+      @while $i < $dropdown-count {
+        li:nth-child(#{$i}) {
+          transition-delay: 0.05s * $i;
+        }
+        $i: $i + 1;
+      }
+    }
+  }
+
+  &.dropdown--closed {
+    .dropdown__list li {
+      visibility: hidden;
+      right: -75px;
+    }
+
+    .dropdown__list {
+      opacity: 0;
+
+      $i: $dropdown-count;
+      $x: 0;
+      @while $i > 0 {
+        li:nth-child(#{$x}) {
+          transition-delay: 0.05s * $i;
+        }
+        $i: $i - 1;
+        $x: $x + 1;
+      }
+    }
+  }
+}

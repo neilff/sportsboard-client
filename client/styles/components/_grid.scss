@@ -1,0 +1,25 @@
+#grid {
+  margin-top: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &.is-dragged {
+    background: $almost-black / 2;
+  }
+
+  .subgrid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    &.is-dragged {
+      background: $almost-black / 2;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $almost-black;
+  transition: all 200ms;
+
+  .modal__title {
+    background-color: $blue;
+    color: $white;
+    padding: $DP;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 100;
+  }
+
+  .modal__body {
+    padding: $DP;
+  }
+
+  @include MQ(S) {
+    top: 10%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 425px;
+    bottom: initial;
+  }
+}
+

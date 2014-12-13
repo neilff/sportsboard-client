@@ -1,0 +1,4 @@
+{
+  "apiUrl": "http://local.codebeard.io:8080",
+  "facebookLoginUrl": "http://local.codebeard.io:8080/auth/facebook"
+}

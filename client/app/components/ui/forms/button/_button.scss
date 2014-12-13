@@ -1,0 +1,24 @@
+.btn {
+  border-radius: $default-border-radius;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0 1.5rem;
+  transition: background 200ms;
+
+  &:active {
+    box-shadow: inset 0 5px 5px rgba(0,0,0,.125);
+  }
+
+  .icon {
+    padding-right: 0.5rem;
+  }
+
+  &.btn--blue {
+    background: $blue;
+    color: $white;
+
+    &:hover {
+      background: $blue / 1.05;
+    }
+  }
+}

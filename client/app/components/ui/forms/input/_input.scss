@@ -1,0 +1,18 @@
+input[type="email"],
+input[type="search"],
+input[type="text"],
+input[type="password"],
+textarea,
+select,
+.input {
+  border-radius: $default-border-radius;
+  border: 2px solid transparent;
+
+  &:focus {
+    border: none;
+  }
+
+  &.input--error {
+    border: 2px solid red;
+  }
+}
