@@ -5,6 +5,7 @@ $dropdown-count: 5;
   position: relative;
   width: 175px;
   display: block;
+  user-select: none;
 
   .dropdown__title {
     z-index: 1004;
@@ -13,7 +14,6 @@ $dropdown-count: 5;
     background: $blue;
     color: $white;
     cursor: pointer;
-    user-select: none;
     padding: 1rem;
     position: relative;
 

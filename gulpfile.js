@@ -1,12 +1,13 @@
 var gulp = require('gulp');
-var browserify = require('gulp-browserify');
-var concat = require('gulp-concat');
-var sass = require('gulp-ruby-sass');
 var rename = require('gulp-rename');
+var concat = require('gulp-concat');
+var browserify = require('gulp-browserify');
 var connect = require('gulp-connect');
 var notify = require("gulp-notify");
 var watch = require('gulp-watch');
-var cssGlobbing = require('gulp-css-globbing');
+var sass = require('gulp-ruby-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 
 var config = {
   port: 3000
@@ -45,16 +46,18 @@ gulp.task('browserify', function() {
 gulp.task('sass', function () {
   return gulp.src('./client/**/*.scss')
     .pipe(sass({
-      sourcemap: true,
-      sourcemapPath: '../scss',
-      bundleExec: false,
+      sourcemap: false,
       require: 'sass-globbing'
     }))
-    .on('error', function (err) {
-      notify('Gulp: Sass Error')
+    .on('error', function (error) {
+      console.error(error);
+      this.emit('end');
     })
-    .pipe(gulp.dest('./build'))
-    .pipe(connect.reload());
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: true
+    }))
+    .pipe(gulp.dest('./build'));
 });
 
 /**
