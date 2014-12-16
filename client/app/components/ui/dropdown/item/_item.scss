@@ -1,0 +1,18 @@
+.dropdown-item {
+  padding: $DP;
+  margin: 3px 0;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+  color: $white;
+  background: $almost-black;
+  position: relative;
+  border-left: $DP / 2 solid $blue;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 20px;
+  position: relative;
+  z-index: 2;
+
+  &:hover {
+    border-left: $DP / 2 solid $blue * 1.25;
+  }
+}

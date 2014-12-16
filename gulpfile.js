@@ -57,7 +57,8 @@ gulp.task('sass', function () {
       browsers: ['last 2 versions'],
       cascade: true
     }))
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./build'))
+    .pipe(connect.reload());
 });
 
 /**

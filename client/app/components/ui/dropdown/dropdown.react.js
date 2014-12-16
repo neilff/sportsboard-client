@@ -7,7 +7,8 @@ var cx = React.addons.classSet;
 var Dropdown = React.createClass({
 
   propTypes: {
-    title: React.PropTypes.string.isRequired
+    title: React.PropTypes.string.isRequired,
+    children: React.PropTypes.element.isRequired
   },
 
   getInitialState: function() {
@@ -30,13 +31,12 @@ var Dropdown = React.createClass({
     return (
       <div className={ classes }>
         <div className="dropdown__title"
-          onClick={ this._toggleDropdownVisibility }>{ this.props.title }</div>
+          onClick={ this._toggleDropdownVisibility }>
+            <ProfileImage /> { this.props.title }
+          </div>
 
-        <ul className="dropdown__list">
-          <li>Selection</li>
-          <li>Selection</li>
-          <li>Selection</li>
-          <li>Selection</li>
+        <ul className="dropdown__list" onClick={ this._toggleDropdownVisibility }>
+          { this.props.children }
         </ul>
       </div>
     );
