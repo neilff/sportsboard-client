@@ -1,0 +1,12 @@
+.profile-image {
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+
+  &.profile-image--small {
+    height: 30px;
+    width: 30px;
+  }
+}

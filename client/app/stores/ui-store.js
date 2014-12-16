@@ -8,6 +8,7 @@
  * Store Dependencies
  */
 var _ = require('lodash');
+var R = require('ramda');
 var AppDispatcher = require('../dispatchers/app-dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/app-constants');
@@ -16,7 +17,8 @@ var CHANGE_EVENT = 'UiStateChange';
 
 var _uiState = {
   zIndex: 1,
-  isDragging: false
+  isDragging: false,
+  modalVisible: null
 };
 
 /**
@@ -35,6 +37,10 @@ function _setDragState(bool) {
   _uiState.isDragging = bool;
 }
 
+function _setVisible(visible) {
+  _uiState.modalVisible = visible;
+}
+
 var UiStore = _.merge(EventEmitter.prototype, {
 
   /**
@@ -47,6 +53,10 @@ var UiStore = _.merge(EventEmitter.prototype, {
 
   getDragState: function() {
     return _uiState.isDragging;
+  },
+
+  getModalVisible: function() {
+    return _uiState.modalVisible;
   },
 
   emitChange: function() {
@@ -92,6 +102,13 @@ AppDispatcher.register(function(payload) {
 
     case Constants.UiActionTypes.DRAG_END:
       _setDragState(false);
+      UiStore.emitChange();
+      break;
+
+    case Constants.UiActionTypes.TOGGLE_MODAL:
+      _setVisible(action.modal);
+
+      console.log('TOGGLE_MODAL :: ', action.modal);
       UiStore.emitChange();
       break;
 

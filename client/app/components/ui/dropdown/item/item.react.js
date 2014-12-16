@@ -15,7 +15,7 @@ var DropdownItem = React.createClass({
   render: function() {
     return (
       <li className="dropdown-item" { ...this.props }>
-        { this.props.children }
+        { this.props.title }
       </li>
     );
   }

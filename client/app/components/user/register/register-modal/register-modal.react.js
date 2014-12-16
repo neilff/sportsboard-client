@@ -1,23 +1,23 @@
 /**
- * Login Component
+ * Register Modal Component
  */
 
 var React = require('react');
 var RegisterForm = require('../register-form/register-form.react');
-var Modal = require('../../ui/modal/modal.react');
+var Modal = require('../../../ui/modal/modal.react');
 
-var RegisterOverlay = React.createClass({
+var RegisterModal = React.createClass({
 
   /**
    * @return {object}
    */
   render: function() {
     return (
-      <Modal title="Register for Sportsboard">
+      <Modal title="Register for Sportsboard" isVisible={ true }>
         <RegisterForm />
       </Modal>
     );
   }
 });
 
-module.exports = RegisterOverlay;
+module.exports = RegisterModal;

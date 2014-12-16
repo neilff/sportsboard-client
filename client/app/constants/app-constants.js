@@ -18,7 +18,8 @@ module.exports = {
   UiActionTypes: keyMirror({
     DRAG_WIDGET: null,
     DRAG_START: null,
-    DRAG_END: null
+    DRAG_END: null,
+    TOGGLE_MODAL: null
   }),
 
   AuthActionTypes: keyMirror({
@@ -44,5 +45,12 @@ module.exports = {
 
   Api: keyMirror({
     API_KEY: null
-  })
+  }),
+
+  ModalTypes: keyMirror({
+    PREFERENCES: null,
+    ADD_WIDGET: null,
+    REMOVE_WIDGET: null,
+    UPDATE_WIDGET: null
+  }),
 };

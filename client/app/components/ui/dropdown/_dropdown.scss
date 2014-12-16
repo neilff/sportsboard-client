@@ -1,9 +1,10 @@
 $dropdown-count: 5;
+$dropdown-height: 44px;
 
 .dropdown {
   perspective: 800px;
   position: relative;
-  width: 175px;
+  min-width: 175px;
   display: block;
   user-select: none;
 
@@ -24,17 +25,10 @@ $dropdown-count: 5;
     color: $white;
     cursor: pointer;
     padding: 1rem;
+    max-height: $dropdown-height;
+    box-sizing: border-box;
+    min-height: $dropdown-height;
     position: relative;
-
-    &:after {
-      position: absolute;
-      top: 15%;
-      height: 70%;
-      line-height: 24px;
-      content: '\f104';
-      right: 0;
-      width: 50px;
-    }
 
     &:active {
       transform: rotateY(-10deg);
@@ -45,7 +39,7 @@ $dropdown-count: 5;
     list-style-type: none;
     position: absolute;
     overflow: hidden;
-    top: 44px;
+    top: $dropdown-height;
     left: 0;
     right: 0;
     transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
@@ -91,6 +85,12 @@ $dropdown-count: 5;
         $i: $i - 1;
         $x: $x + 1;
       }
+    }
+  }
+
+  &.dropdown--has-title {
+    .dropdown__title {
+      padding-left: 4.5rem;
     }
   }
 }

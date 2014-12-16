@@ -4,6 +4,7 @@
 
 var React = require('react');
 var Overlay = require('../overlay/overlay.react');
+var ModalCloseBtn = require('./modal-close-btn/modal-close-btn.react');
 
 var Modal = React.createClass({
 
@@ -16,11 +17,16 @@ var Modal = React.createClass({
    * @return {object}
    */
   render: function() {
+    var closeBtn = (this.props.hasClose) ?
+      <ModalCloseBtn /> :
+      null;
+
     return (
-      <Overlay>
+      <Overlay isVisible={ this.props.isVisible }>
         <div className="modal">
           <div className="modal__title">
             { this.props.title }
+            { closeBtn }
           </div>
           <div className="modal__body">
             { this.props.children }

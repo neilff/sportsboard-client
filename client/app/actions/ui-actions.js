@@ -27,6 +27,13 @@ var UiActions = {
       actionType: Constants.UiActionTypes.DRAG_END,
       state: false
     });
+  },
+
+  showModal: function(modal) {
+    AppDispatcher.handleViewAction({
+      actionType: Constants.UiActionTypes.TOGGLE_MODAL,
+      modal: modal
+    });
   }
 };
 

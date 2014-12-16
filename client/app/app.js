@@ -1,17 +1,17 @@
 /**
- * React Draggable
+ * Sportsboard App Component
  */
 
 var React = require('react');
 var Grid = require('./components/grid/grid.react');
 var Header = require('./components/header/header.react');
-var Admin = require('./components/admin/admin.react');
 var AuthUtils = require('./utils/auth-utils');
 var AuthStore = require('./stores/auth-store');
 var AuthActions = require('./actions/auth-actions');
-var LoginModal = require('./components/user/login-modal/login-modal.react');
-var RegisterModal = require('./components/user/register-modal/register-modal.react');
-var loggedInStatus = false;
+
+var LoginModal = require('./components/user/login/login-modal/login-modal.react');
+var RegisterModal = require('./components/user/register/register-modal/register-modal.react');
+var PreferencesModal = require('./components/user/preferences/preferences-modal/preferences-modal.react');
 
 function _getInitialState() {
   return {
@@ -42,8 +42,7 @@ var App = React.createClass({
   render: function() {
     var loggedIn = this.state.auth.isLoggedIn;
     var registered = this.state.auth.isRegistered;
-
-    console.log(registered);
+    var modalVisibility = this.state.modalVisibility;
 
     var modal = (function() {
       if (!loggedIn) {
@@ -58,6 +57,7 @@ var App = React.createClass({
     return (
       <div id="app">
         { modal }
+        <PreferencesModal />
         <Header />
         <Grid />
       </div>

@@ -11,10 +11,6 @@ var LoginForm = React.createClass({
     return {};
   },
 
-  componentDidMount: function() {
-    // console.log('componentDidMount');
-  },
-
   /**
    * @return {object}
    */
@@ -58,7 +54,6 @@ var LoginForm = React.createClass({
     var password = this.refs.password.getDOMNode().value.trim();
 
     if (!email || !password) {
-      console.log('TODO: Handle empty form');
       return;
     }
 

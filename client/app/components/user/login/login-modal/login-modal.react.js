@@ -4,7 +4,7 @@
 
 var React = require('react');
 var LoginFacebookBtn = require('../login-facebook-btn/login-facebook-btn.react');
-var Modal = require('../../ui/modal/modal.react');
+var Modal = require('../../../ui/modal/modal.react');
 
 var LoginModal = React.createClass({
 
@@ -13,7 +13,7 @@ var LoginModal = React.createClass({
    */
   render: function() {
     return (
-      <Modal title="Sign in to Sportsboard">
+      <Modal title="Sign in to Sportsboard" isVisible={ true }>
         <LoginFacebookBtn />
       </Modal>
     );

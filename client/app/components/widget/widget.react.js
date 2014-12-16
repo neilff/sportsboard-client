@@ -34,8 +34,6 @@ var Widget = React.createClass({
   },
 
   componentDidMount: function() {
-    console.log(this.state);
-
     elem = this.getDOMNode();
     gridContainer = this.props.gridContainer;
     elem.style.zIndex = 0;

@@ -1,15 +1,15 @@
 /**
- * RegisterForm Component
+ * Register Form Component
  */
 
 var React = require('react/addons');
 var cx = React.addons.classSet;
-var UserActions = require('../../../actions/user-actions');
+var UserActions = require('../../../../actions/user-actions');
 
-var Form = require('../../ui/forms/form/form.react');
-var Button = require('../../ui/forms/button/button.react');
-var Label = require('../../ui/forms/label/label.react');
-var Input = require('../../ui/forms/input/input.react');
+var Form = require('../../../ui/forms/form/form.react');
+var Button = require('../../../ui/forms/button/button.react');
+var Label = require('../../../ui/forms/label/label.react');
+var Input = require('../../../ui/forms/input/input.react');
 
 var RegisterForm = React.createClass({
 

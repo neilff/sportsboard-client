@@ -3,9 +3,9 @@
  */
 
 var React = require('react');
-var LoginActions = require('../../../actions/login-actions');
-var UrlUtils = require('../../../utils/url-utils');
-var Button = require('../../ui/forms/button/button.react');
+var LoginActions = require('../../../../actions/login-actions');
+var UrlUtils = require('../../../../utils/url-utils');
+var Button = require('../../../ui/forms/button/button.react');
 
 var LogoutButton = React.createClass({
 
