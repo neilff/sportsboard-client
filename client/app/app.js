@@ -3,8 +3,7 @@
  */
 
 var React = require('react');
-var Grid = require('./components/grid/grid.react');
-var Header = require('./components/header/header.react');
+
 var AuthUtils = require('./utils/auth-utils');
 var AuthStore = require('./stores/auth-store');
 var AuthActions = require('./actions/auth-actions');
@@ -12,6 +11,10 @@ var AuthActions = require('./actions/auth-actions');
 var LoginModal = require('./components/user/login/login-modal/login-modal.react');
 var RegisterModal = require('./components/user/register/register-modal/register-modal.react');
 var PreferencesModal = require('./components/user/preferences/preferences-modal/preferences-modal.react');
+var WidgetAddModal = require('./components/widget/widget-add-modal/widget-add-modal.react');
+
+var Grid = require('./components/grid/grid.react');
+var Header = require('./components/header/header.react');
 
 function _getInitialState() {
   return {
@@ -58,6 +61,7 @@ var App = React.createClass({
       <div id="app">
         { modal }
         <PreferencesModal />
+        <WidgetAddModal />
         <Header />
         <Grid />
       </div>

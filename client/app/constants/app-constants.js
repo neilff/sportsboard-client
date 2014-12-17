@@ -19,7 +19,8 @@ module.exports = {
     DRAG_WIDGET: null,
     DRAG_START: null,
     DRAG_END: null,
-    TOGGLE_MODAL: null
+    TOGGLE_MODAL: null,
+    TOGGLE_HEADER: null
   }),
 
   AuthActionTypes: keyMirror({

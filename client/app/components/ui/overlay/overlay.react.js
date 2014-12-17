@@ -1,9 +1,9 @@
 /**
  * Overlay Component
  */
-
 var React = require('react/addons');
 var cx = React.addons.classSet;
+var UiActions = require('../../../actions/ui-actions');
 
 var Overlay = React.createClass({
 
@@ -17,16 +17,20 @@ var Overlay = React.createClass({
    */
   render: function() {
     var classes = cx({
-      'visible': this.props.isVisible,
-      'hidden': !this.props.isVisible,
+      'overlay--visible': this.props.isVisible,
+      'overlay--hidden': !this.props.isVisible,
       'overlay': true
     });
 
     return (
-      <div className={ classes }>
+      <div className={ classes } onClick={ this._closeOverlay }>
         { this.props.children }
       </div>
     );
+  },
+
+  _closeOverlay: function() {
+    UiActions.showModal(null);
   }
 });
 

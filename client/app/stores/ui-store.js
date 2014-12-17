@@ -18,7 +18,8 @@ var CHANGE_EVENT = 'UiStateChange';
 var _uiState = {
   zIndex: 1,
   isDragging: false,
-  modalVisible: null
+  modalVisible: null,
+  headerVisible: true
 };
 
 /**
@@ -41,6 +42,10 @@ function _setVisible(visible) {
   _uiState.modalVisible = visible;
 }
 
+function _toggleHeaderVisible() {
+  _uiState.headerVisible = !_uiState.headerVisible;
+}
+
 var UiStore = _.merge(EventEmitter.prototype, {
 
   /**
@@ -57,6 +62,10 @@ var UiStore = _.merge(EventEmitter.prototype, {
 
   getModalVisible: function() {
     return _uiState.modalVisible;
+  },
+
+  getHeaderVisible: function() {
+    return _uiState.headerVisible;
   },
 
   emitChange: function() {
@@ -107,8 +116,11 @@ AppDispatcher.register(function(payload) {
 
     case Constants.UiActionTypes.TOGGLE_MODAL:
       _setVisible(action.modal);
+      UiStore.emitChange();
+      break;
 
-      console.log('TOGGLE_MODAL :: ', action.modal);
+    case Constants.UiActionTypes.TOGGLE_HEADER:
+      _toggleHeaderVisible();
       UiStore.emitChange();
       break;
 

@@ -1,5 +1,5 @@
 $dropdown-count: 5;
-$dropdown-height: 44px;
+$dropdown-height: $default-header-height;
 
 .dropdown {
   perspective: 800px;
@@ -42,7 +42,7 @@ $dropdown-height: 44px;
     top: $dropdown-height;
     left: 0;
     right: 0;
-    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+    transition: all $default-anim 300ms;
   }
 
   &.dropdown--open {

@@ -34,6 +34,13 @@ var UiActions = {
       actionType: Constants.UiActionTypes.TOGGLE_MODAL,
       modal: modal
     });
+  },
+
+  toggleHeader: function() {
+    AppDispatcher.handleViewAction({
+      actionType: Constants.UiActionTypes.TOGGLE_HEADER,
+      state: null
+    });
   }
 };
 

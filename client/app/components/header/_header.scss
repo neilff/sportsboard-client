@@ -1,8 +1,30 @@
 .header {
-  height: 44px;
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
-  background: $almost-black;
+  background-color: #333333;
+  z-index: 10;
+  transition: all $default-anim $default-anim-speed;
+
+  &.header--visible {
+    top: 0px;
+
+    .btn--close-header {
+      bottom: 0px;
+      transform: rotateX(0deg);
+    }
+  }
+
+  &.header--hidden {
+    top: -80px;
+
+    .btn--close-header {
+      bottom: -25px;
+      transform: rotateX(180deg);
+    }
+  }
+
+  .header--primary {
+    height: $default-header-height;
+  }
 }

@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   background-color: $almost-black;
-  transition: all 200ms;
+  transition:  all $default-anim $default-anim-speed;
 
   .modal__title {
     background-color: $blue;

@@ -6,4 +6,21 @@
   bottom: 0;
   background: rgba(0,0,0,.25);
   z-index: 9999;
+  transition: all $default-anim $default-anim-speed;
+  perspective: 800px;
+
+  &.overlay--visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.overlay--hidden {
+    visibility: hidden;
+    opacity: 0;
+
+    .modal {
+      top: -5%;
+      transform: rotateX(45deg);
+    }
+  }
 }
