@@ -3,9 +3,10 @@
  */
 
 var React = require('react');
-var Modal = require('../../ui/modal/modal.react');
-var UiStore = require('../../../stores/ui-store');
-var Constants = require('../../../constants/app-constants');
+var Modal = require('../../../ui/modal/modal.react');
+var UiStore = require('../../../../stores/ui-store');
+var Constants = require('../../../../constants/app-constants');
+var WidgetAddForm = require('../add-form/add-form.react');
 
 function _getInitialState() {
   return {
@@ -32,8 +33,12 @@ var WidgetAddModal = React.createClass({
    */
   render: function() {
     return (
-      <Modal title="Add new widget" hasClose={ true } isVisible={ this.state.visible }>
-        <h1>TODO: Add widget modal</h1>
+      <Modal
+        title="Add new widget"
+        size="large"
+        hasClose={ true }
+        isVisible={ this.state.visible }>
+        <WidgetAddForm />
       </Modal>
     );
   },

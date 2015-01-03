@@ -36,6 +36,13 @@ var UiActions = {
     });
   },
 
+  closeModal: function() {
+    AppDispatcher.handleViewAction({
+      actionType: Constants.UiActionTypes.TOGGLE_MODAL,
+      modal: null
+    });
+  },
+
   toggleHeader: function() {
     AppDispatcher.handleViewAction({
       actionType: Constants.UiActionTypes.TOGGLE_HEADER,

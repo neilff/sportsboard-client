@@ -2,6 +2,10 @@
  * Sportsboard App Component
  */
 
+global.__component_path = './components/';
+global.__action_path = './actions/';
+global.__store_path = './stores/';
+
 var React = require('react');
 
 var AuthUtils = require('./utils/auth-utils');
@@ -11,7 +15,7 @@ var AuthActions = require('./actions/auth-actions');
 var LoginModal = require('./components/user/login/login-modal/login-modal.react');
 var RegisterModal = require('./components/user/register/register-modal/register-modal.react');
 var PreferencesModal = require('./components/user/preferences/preferences-modal/preferences-modal.react');
-var WidgetAddModal = require('./components/widget/widget-add-modal/widget-add-modal.react');
+var WidgetAddModal = require('./components/widget/widget-add/add-modal/add-modal.react');
 
 var Grid = require('./components/grid/grid.react');
 var Header = require('./components/header/header.react');

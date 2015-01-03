@@ -6,10 +6,6 @@ var React = require('react/addons');
 var cx = React.addons.classSet;
 var Dropdown = React.createClass({
 
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },
-
   getInitialState: function() {
     return {
       isOpen: false

@@ -11,7 +11,7 @@
     background-color: $blue;
     color: $white;
     padding: $DP;
-    text-align: center;
+    text-align: left;
     font-size: 2.5rem;
     font-weight: 100;
   }
@@ -26,6 +26,12 @@
     margin: 0 auto;
     max-width: 425px;
     bottom: initial;
+
+    &.modal--large {
+      top: 5%;
+      width: 95%;
+      max-width: 1200px;
+    }
   }
 }
 

@@ -2,7 +2,8 @@
  * Login Component
  */
 
-var React = require('react');
+var React = require('react/addons');
+var cx = React.addons.classSet;
 var Overlay = require('../overlay/overlay.react');
 var ModalCloseBtn = require('./modal-close-btn/modal-close-btn.react');
 
@@ -19,13 +20,23 @@ var Modal = React.createClass({
   render: function() {
     var closeBtn = null;
 
+    var modalClasses = {
+      'modal': true
+    }
+
+    if (this.props.size) {
+      modalClasses['modal--' + this.props.size] = true;
+    }
+
     if (this.props.hasClose) {
       closeBtn = <ModalCloseBtn />
     }
 
     return (
       <Overlay isVisible={ this.props.isVisible }>
-        <div className="modal" onClick={ this._stopProp }>
+        <div
+          className={ cx(modalClasses) }
+          onClick={ this._stopProp }>
           <div className="modal__title">
             { this.props.title }
             { closeBtn }

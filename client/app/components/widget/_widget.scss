@@ -25,14 +25,12 @@
   }
 
   .controls {
-    @extend .no-select;
     position: absolute;
     bottom: 0;
     right: 0;
     padding: 5px 10px;
 
     .icon {
-      @extend .no-select;
       background: white;
       width: 25px;
       height: 25px;

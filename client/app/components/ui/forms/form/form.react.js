@@ -5,10 +5,6 @@
 var React = require('react');
 var Form = React.createClass({
 
-  propTypes: {
-    onSubmit: React.PropTypes.func.isRequired
-  },
-
   /**
    * @return {object}
    */

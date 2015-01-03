@@ -23,6 +23,10 @@
     }
   }
 
+  &.btn--inline {
+    margin: 0 10px;
+  }
+
   &.btn--small {
     font-size: 1rem;
     padding: 0 1rem;
@@ -32,6 +36,11 @@
 
   &.btn--black {
     background: $almost-black;
+    color: $white;
+  }
+
+  &.btn--red {
+    background: $red;
     color: $white;
   }
 

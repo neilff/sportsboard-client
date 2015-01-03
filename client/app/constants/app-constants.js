@@ -31,7 +31,11 @@ module.exports = {
 
   WidgetActionTypes: keyMirror({
     ADD_WIDGET: null,
-    REMOVE_WIDGET: null
+    ADD_WIDGET_FORM_CHANGE: null,
+    ADD_WIDGET_FORM_CLEAR: null,
+    REMOVE_WIDGET: null,
+    RECEIVE_AVAIL_WIDGETS: null,
+    SELECT_NEW_WIDGET: null
   }),
 
   PayloadSources: keyMirror({

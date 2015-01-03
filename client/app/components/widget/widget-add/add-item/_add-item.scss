@@ -1,0 +1,24 @@
+.widget-add-item {
+  border: 1px solid $blue;
+  display: inline-block;
+  margin: 15px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  color: $white;
+  cursor: pointer;
+  transition: all 300ms;
+
+  &.selected {
+    border: 1px solid $white !important;
+  }
+
+  &:hover {
+    border: 1px solid $blue * 1.25;
+  }
+
+  .widget-add-item--inner {
+    height: 100%;
+    width: 100%;
+  }
+}
