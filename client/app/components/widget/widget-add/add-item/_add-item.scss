@@ -1,13 +1,13 @@
 .widget-add-item {
   border: 1px solid $blue;
-  display: inline-block;
-  margin: 15px;
-  width: 100px;
-  height: 100px;
-  text-align: center;
   color: $white;
   cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  padding: 5px;
+  text-align: left;
   transition: all 300ms;
+  width: 100%;
 
   &.selected {
     border: 1px solid $white !important;

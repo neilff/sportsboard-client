@@ -53,10 +53,6 @@ gulp.task('sass', function () {
       console.error(error);
       this.emit('end');
     })
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: true
-    }))
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload());
 });
